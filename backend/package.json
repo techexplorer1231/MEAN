@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+  "start": "nodemon ./bin/www",
+	"test" : "jasmine-node spec --autotest --watch . --color --verbose ./bin/www"
   },
   "dependencies": {
     "express": "~4.2.0",
@@ -13,7 +14,6 @@
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
-    "jade": "~1.3.0",
     "jasmine-node": "*",
     "superagent": "^0.18.2"
   }
