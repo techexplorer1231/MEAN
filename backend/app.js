@@ -1,4 +1,5 @@
 var express = require('express');
+var cors = require('cors');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
@@ -6,12 +7,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 
-var uri = 'mongodb://localhost/mongoose-shared-connection';
+var uri = 'mongodb://localhost/myApp';
 mongoose.connect(uri);
 
 var users = require('./routes/route.users');
 
 var app = express();
+app.use(cors());
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -51,6 +53,5 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;
